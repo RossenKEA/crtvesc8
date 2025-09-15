@@ -11,8 +11,8 @@ import Section_Green from "../components/Section_Green.astro";
   </head>
   <body>
     <Nav />
-    <Header />
     <main>
+      <Header />
       <section class="hero-gradient-blue">
         <div class="iphone-grid">
           <img src="/src/assets/PhoneFrame.png" alt="iPhone mockup 1" />
@@ -20,7 +20,18 @@ import Section_Green from "../components/Section_Green.astro";
           <img src="/src/assets/PhoneFrame.png" alt="iPhone mockup 3" />
         </div>
       </section>
-      <Section_Green />
+
+      <Section_Green
+        title1="LOCAL CRTV"
+        title2="LOCAL CRTV"
+        title3="LOCAL CRTV"
+        description1="Solène & Max on their favorites neighborhoods in Berlin"
+        description2="Store manager from a Berlin located store gives you..."
+        description3="Meet David - digital artist - on the street in Copenhagen and get his insider tips"
+        imgsrc1="/src/assets/interview_1.png"
+        imgsrc2="/src/assets/interview_2.png"
+        imgsrc3="/src/assets/interview_3.png"
+      />
     </main>
   </body>
 </html>

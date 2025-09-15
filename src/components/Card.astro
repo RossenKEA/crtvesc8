@@ -1,0 +1,44 @@
+---
+const { imgsrc, title, description } = Astro.props;
+---
+
+<article class="card">
+  <img src={imgsrc} alt="card" />
+  <p class="card-label">{title}</p>
+  <p class="card-text">
+    {description}
+  </p>
+</article>
+
+<style>
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .card-label {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    margin: 0.5rem 0 0 0.5rem;
+
+    text-decoration: underline;
+  }
+
+  .card-text {
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0.2rem 0.5rem 1rem;
+    color: var(--color-blue);
+  }
+</style>
