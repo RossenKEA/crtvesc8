@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import Section_Green from "../components/Section_Green.astro";
+import Phone from "../components/Phone.astro";
 ---
 
 <html lang="en">
@@ -15,9 +16,9 @@ import Section_Green from "../components/Section_Green.astro";
       <Header />
       <section class="hero-gradient-blue">
         <div class="iphone-grid">
-          <img src="/src/assets/PhoneFrame.png" alt="iPhone mockup 1" />
-          <img src="/src/assets/PhoneFrame.png" alt="iPhone mockup 2" />
-          <img src="/src/assets/PhoneFrame.png" alt="iPhone mockup 3" />
+          <Phone />
+          <Phone />
+          <Phone />
         </div>
       </section>
 
@@ -51,10 +52,5 @@ import Section_Green from "../components/Section_Green.astro";
     max-width: 900px;
     width: 100%;
     justify-items: center;
-  }
-  .iphone-grid img {
-    max-width: 100%;
-    height: auto;
-    padding-top: 50px;
   }
 </style>
