@@ -1,0 +1,96 @@
+<section class="section-green">
+  <div class="container">
+    <p class="section-label">FEATURED INTERVIEWS</p>
+    <h2 class="section-title">MEET THE LOCAL CRTV’S</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="/images/interview1.png" alt="Interview 1" />
+        <p class="card-label">LOCAL CRTV</p>
+        <p class="card-text">
+          Solène & Max on their favorites neighborhoods in Berlin
+        </p>
+      </article>
+      <article class="card">
+        <img src="/images/interview2.png" alt="Interview 2" />
+        <p class="card-label">LOCAL CRTV</p>
+        <p class="card-text">
+          Store manager from a Berlin located store gives you...
+        </p>
+      </article>
+      <article class="card">
+        <img src="/images/interview3.png" alt="Interview 3" />
+        <p class="card-label">LOCAL CRTV</p>
+        <p class="card-text">
+          Meet David – digital artist – on the street in Copenhagen and get his
+          insider tips
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-green {
+    background-color: var(--color-green);
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-blue);
+    border-top: 1px solid var(--color-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+
+    margin-top: auto;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .card-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    margin: 0.5rem 0 0 0.5rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    margin: 0.2rem 0.5rem 1rem;
+    color: var(--color-blue);
+  }
+</style>
