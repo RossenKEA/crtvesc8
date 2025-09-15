@@ -1,0 +1,74 @@
+---
+import "../styles/global.css";
+---
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+</head>
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>FIND US</h3>
+      <p>
+        Creative Escape <br />
+        Agency for Branding
+      </p>
+      <p>
+        <a href="#"
+          >Guldbjergsgade 92 <br />
+          2200 Nørrebro</a
+        >
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>CONTACT US</h3>
+      <p>Rasmus Rossen<br />raro0002@stud.ek.dk</p>
+
+      <p>Ida Petersen<br />idax3451@stud.ek.dk</p>
+
+      <p>Emilie Rasmussen<br />emra0005@stud.ek.dk</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>FOLLOW US</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank">
+          <i class="fab fa-instagram social-icon instagram"></i></a
+        >
+        <a href="https://www.tiktok.com/" target="_blank">
+          <i class="fab fa-tiktok social-icon tiktok"></i></a
+        >
+      </div>
+    </div>
+
+    <!-- <div>@Copyright 2025</div> -->
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color-blue);
+    color: var(--color-bg);
+    padding: 40px 20px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    /* gør at den ryger ned under hianden i mobile
+    flex-wrap: wrap; */
+  }
+
+  .footer-section a {
+    color: var(--color-bg);
+  }
+  .social-icons {
+    font-size: 50px;
+    gap: 100px;
+  }
+</style>
