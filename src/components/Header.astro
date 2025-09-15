@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+---
+
+<header class="site-header">
+  <h1 class="site-title">
+    <span class="bold">CRTV ESC</span>
+    <span class="light">COMMUNITY</span>
+  </h1>
+</header>
+
+<style>
+  @font-face {
+    font-family: "Poppins";
+    src: url("/public/fonts/Poppins-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    src: url("/public/fonts/Poppins-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .site-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 4rem;
+
+    display: block;
+    margin: auto;
+  }
+  .site-title .bold {
+    font-weight: 800;
+    color: var(--color-blue);
+  }
+  .site-title .light {
+    font-weight: 300;
+    color: var(--color-blue);
+  }
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-bg);
+  }
+</style>

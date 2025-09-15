@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+---
+
+<nav class="top-nav">
+  <!-- Far left icon -->
+  <img
+    src="/src/assets/nav_icon_burger.png"
+    alt="burger menu"
+    class="nav-icon nav-left"
+  />
+
+  <!-- Right group -->
+  <div class="nav-right">
+    <img src="/src/assets/nav_icon_logo.png" alt="logo icon" class="nav-icon" />
+
+    <div class="nav-links">
+      <a href="#">LOCAL CRTV</a>
+      <a href="#">FREE GEM</a>
+      <a href="#">CRTV ESC RECOMMEND</a>
+      <a href="#">EVENTS</a>
+    </div>
+
+    <img src="/src/assets/nav_icon_zoom.png" alt="Search" class="nav-icon" />
+  </div>
+</nav>
+
+<style>
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .nav-icon {
+    height: 28px;
+    width: auto;
+    cursor: pointer;
+  }
+  .nav-left {
+    height: 15px;
+  }
+</style>
