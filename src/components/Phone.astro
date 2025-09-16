@@ -1,5 +1,10 @@
-<div>
-  <img src="/src/assets/PhoneFrame.png" alt="iPhone mockup 1" />
+---
+const { frame = "/src/assets/PhoneFrame.png", screen } = Astro.props;
+---
+
+<div class="phone">
+  <img src={frame} alt="Phone frame" class="frame" />
+  <img src={screen} alt="Screen" class="screen" />
 </div>
 
 <style>
@@ -7,5 +12,26 @@
     max-width: 100%;
     height: auto;
     padding-top: 50px;
+  }
+
+  .phone {
+    position: relative;
+    width: 275px;
+  }
+
+  .frame {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .screen {
+    position: absolute;
+    top: 0%; /* tweak these to fit your frame window */
+    width: 100%;
+    height: auto;
+    z-index: 1;
   }
 </style>

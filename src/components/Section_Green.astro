@@ -1,6 +1,8 @@
 ---
 import Card from "./Card.astro";
 
+const { mainTitle, subTitle } = Astro.props;
+
 const { imgsrc1, title1, description1 } = Astro.props;
 const { imgsrc2, title2, description2 } = Astro.props;
 const { imgsrc3, title3, description3 } = Astro.props;
@@ -8,8 +10,8 @@ const { imgsrc3, title3, description3 } = Astro.props;
 
 <section class="section-green">
   <div class="container">
-    <p class="section-label">FEATURED INTERVIEWS</p>
-    <h2 class="section-title">MEET THE LOCAL CRTV’S</h2>
+    <p class="section-label">{subTitle}</p>
+    <h2 class="section-title">{mainTitle}</h2>
     <div class="cards">
       <Card imgsrc={imgsrc1} title={title1} description={description1} />
       <Card imgsrc={imgsrc2} title={title2} description={description2} />
@@ -46,9 +48,8 @@ const { imgsrc3, title3, description3 } = Astro.props;
     font-weight: 800;
     color: var(--color-blue);
     border-top: 1px solid var(--color-blue);
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
-
+    padding-bottom: 1rem;
+    margin-bottom: auto;
     margin-top: auto;
   }
 
