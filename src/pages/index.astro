@@ -4,17 +4,20 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Section_Green from "../components/Section_Green.astro";
 import Phone from "../components/Phone.astro";
+import Separator from "../components/Separator.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Creative Escape</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
     <Nav />
     <main>
       <Header />
+
       <section class="hero-gradient-blue">
         <div class="iphone-grid">
           <Phone screen="../imgs/Phone_miriam.png" />
@@ -36,12 +39,58 @@ import Phone from "../components/Phone.astro";
         imgsrc2="../imgs/interview_2.png"
         imgsrc3="../imgs/interview_3.png"
       />
+
+      <section>
+        <section class="news-feature">
+          <div class="news-grid">
+            <!-- LEFT: Feature -->
+            <div class="news-feature">
+              <img
+                class="news-feature-img"
+                src="../imgs/Poster_Alexander.png"
+                alt="Berlin feature"
+              />
+
+              <p class="news-kicker">CRTV ESC BERLIN GUIDE</p>
+              <h2 class="news-headline">
+                WHAT CAN’T I MISS IN BERLIN<br />
+                AS A CREATIVE FIRST-TIMER?
+              </h2>
+            </div>
+
+            <!-- RIGHT: News / Upcoming -->
+            <aside class="news">
+              <p class="news-label">NEWS</p>
+              <h3 class="news-title">UPCOMING EVENTS</h3>
+
+              <article class="news-event">
+                <img src="../imgs/Poster_Miriam.png" alt="Event 1" />
+                <p class="news-event-text">
+                  What you shouldn’t miss this week in Copenhagen
+                </p>
+              </article>
+
+              <article class="news-event">
+                <img src="../imgs/Poster_Miriam.png" alt="Event 2" />
+                <p class="news-event-text">
+                  What you shouldn’t miss this week in Copenhagen
+                </p>
+              </article>
+            </aside>
+          </div>
+        </section>
+      </section>
+      <Separator />
     </main>
     <Footer />
   </body>
 </html>
 
 <style>
+  :root {
+    --max: 1200px;
+  }
+
   .hero-gradient-blue {
     height: 800px;
     background: linear-gradient(to bottom, var(--color-blue), var(--color-bg));
@@ -53,8 +102,93 @@ import Phone from "../components/Phone.astro";
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
     justify-items: center;
+  }
+
+  .news-feature {
+    padding: 2.5rem 1.5rem;
+  }
+  .news-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* big left, narrow right */
+    gap: 2.5rem;
+  }
+  /* LEFT */
+  .news-feature-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* optional: match the mockup’s tight crop look */
+    object-fit: cover;
+  }
+  .news-kicker {
+    margin: 1.25rem 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    text-align: center;
+    text-decoration: underline;
+  }
+  .news-headline {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.6rem, 3vw + 0.5rem, 2.6rem);
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--color-text);
+    text-align: center;
+  }
+  /* RIGHT */
+  .news-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin: 0 0 0.75rem;
+    border-bottom: 1px solid #ababab; /* thin line under NEWS */
+    padding-bottom: 0.5rem;
+  }
+  .news-title {
+    margin: 0 0 1.25rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-text);
+  }
+  .news-event {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: start;
+    gap: 0.75rem 1rem;
+    margin: 1.25rem 0 2rem;
+  }
+  .news-event img {
+    width: 140px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .news-event-text {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+  /* Responsive */
+  @media (max-width: 900px) {
+    .news-grid {
+      grid-template-columns: 1fr; /* stack */
+    }
+    .news-event {
+      grid-template-columns: 120px 1fr;
+    }
+    .news-event img {
+      width: 120px;
+      height: 156px;
+    }
   }
 </style>

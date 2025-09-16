@@ -3,4 +3,15 @@
   --color-green: #D8FFA7;
   --color-text: #000000;
   --color-bg: #ffffff;
+
+  --font-body: "Poppins", sans-serif;
+  --font-headings: "Space", sans-serif;
+}
+
+body, p, h1 {
+  font-family: var(--font-body);
+}
+
+h2, h3 {
+  font-family: var(--font-headings);
 }
