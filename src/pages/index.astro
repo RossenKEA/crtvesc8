@@ -2,6 +2,8 @@
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Section_Green from "../components/Section_Green.astro";
+import Phone from "../components/Phone.astro";
 ---
 
 <html lang="en">
@@ -11,11 +13,46 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <Nav />
-    <Header />
     <main>
-      <slot />
-      <!-- Page content goes here -->
+      <Header />
+      <section class="hero-gradient-blue">
+        <div class="iphone-grid">
+          <Phone />
+          <Phone />
+          <Phone />
+        </div>
+      </section>
+
+      <Section_Green
+        title1="LOCAL CRTV"
+        title2="LOCAL CRTV"
+        title3="LOCAL CRTV"
+        description1="Solène & Max on their favorites neighborhoods in Berlin"
+        description2="Store manager from a Berlin located store gives you..."
+        description3="Meet David - digital artist - on the street in Copenhagen and get his insider tips"
+        imgsrc1="/src/assets/interview_1.png"
+        imgsrc2="/src/assets/interview_2.png"
+        imgsrc3="/src/assets/interview_3.png"
+      />
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  .hero-gradient-blue {
+    height: 800px;
+    background: linear-gradient(to bottom, var(--color-blue), var(--color-bg));
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .iphone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    width: 100%;
+    justify-items: center;
+  }
+</style>

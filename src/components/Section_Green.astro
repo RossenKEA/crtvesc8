@@ -1,0 +1,60 @@
+---
+import Card from "./Card.astro";
+
+const { imgsrc1, title1, description1 } = Astro.props;
+const { imgsrc2, title2, description2 } = Astro.props;
+const { imgsrc3, title3, description3 } = Astro.props;
+---
+
+<section class="section-green">
+  <div class="container">
+    <p class="section-label">FEATURED INTERVIEWS</p>
+    <h2 class="section-title">MEET THE LOCAL CRTV’S</h2>
+    <div class="cards">
+      <Card imgsrc={imgsrc1} title={title1} description={description1} />
+      <Card imgsrc={imgsrc2} title={title2} description={description2} />
+      <Card imgsrc={imgsrc3} title={title3} description={description3} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-green {
+    background-color: var(--color-green);
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-blue);
+    border-top: 1px solid var(--color-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+
+    margin-top: auto;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+</style>
