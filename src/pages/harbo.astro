@@ -1,0 +1,198 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Fcard from "../components/Fcard.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Harbo Bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <Nav />
+
+    <main class="page">
+      <!-- Side titel -->
+      <h1 class="title">HARBO BAR</h1>
+
+      <!-- 3-billede grid -->
+      <section class="grid3">
+        <img src="../src/assets/harbo1.png" alt="Harbo Bar facade" />
+        <img src="../src/assets/harbo2.png" alt="Harbo Bar interior" />
+        <img src="../src/assets/harbo3.png" alt="Harbo Bar menu board" />
+      </section>
+
+      <!-- Brødtekst -->
+      <section class="copy">
+        <p>
+          Lorem ipsum dolor sit amet. Rem debitis illo et commodi gailsum aut
+          quia reiciendis vel voluptatem maxime et aperiam culpa qui impedit
+          distinctio? Eum sint quia sed nulla laborum qui aperiam consequatur a
+          quia accusantium in quas expedita id voluptas atque! Sed quos
+          reprehenderit et velit ducimus et aliquid iusto.
+        </p>
+        <p>
+          Eos esse veritatis sit nobis maxime et expedita atque ut vitae
+          dignissimos. Ad quidem unde qui dolorum tempore quo vitae sunt quo
+          impedit rerum.
+        </p>
+        <p>
+          Eos ducimus maiores et eligendi architecto quo enim alias! Id incidunt
+          delectus At veniam voluptate aut iure nulla…
+        </p>
+      </section>
+
+      <!-- Adresse + SoMe -->
+      <section class="info">
+        <div class="address">
+          <strong>HARBO BAR</strong><br />
+          Blågårdsgade 2D<br />
+          2200 Copenhagen N
+        </div>
+        <div class="links">
+          <a
+            href="https://instagram.com/harbo_bar"
+            target="_blank"
+            rel="noopener">@harbo_bar</a
+          >
+          <a href="https://facebook.com/Harbobar" target="_blank" rel="noopener"
+            >facebook.com/Harbobar</a
+          >
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <!-- Slider/“cards” sektion -->
+      <section class="spots">
+        <h2>5 FAVORITE SPOTS IN COPENHAGEN</h2>
+
+        <div class="cards">
+          <Fcard
+            imgsrc="/imgs/harbo.png"
+            title="HARBO BAR"
+            badge="Cafe & bar"
+          />
+          <Fcard
+            imgsrc="imgs/glypoteket.png"
+            title="GLYPTOTEKET"
+            badge="Museum"
+          />
+          <Fcard
+            imgsrc="imgs/bibliotekshaven.png"
+            title="GLYPTOTEKET"
+            badge="Museum"
+          />
+          />
+          <Fcard />
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  :root {
+    --max: 1200px;
+  }
+  .page {
+    max-width: var(--max);
+    /* margin: 0 auto; */
+    padding: 24px 20px 64px;
+  }
+
+  .title {
+    font-size: clamp(34px, 6vw, 64px);
+    line-height: 1;
+    font-weight: 800;
+    margin: 0 0 16px;
+  }
+
+  .grid3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 20px 0 28px;
+  }
+  .grid3 img {
+    /* width: 100%; */
+    /* height: 260px; */
+    object-fit: cover;
+    /* border-radius: 12px; */
+    display: block;
+    justify-content: space-around;
+    max-width: 100%;
+  }
+  @media (min-width: 800px) {
+    .grid3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .grid3 img {
+      /* height: 320px; */
+    }
+  }
+
+  .copy {
+    display: grid;
+    gap: 14px;
+    max-width: 80ch;
+    margin-bottom: 28px;
+  }
+
+  .info {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+    margin-bottom: 28px;
+  }
+  .links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .links a {
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  @media (min-width: 720px) {
+    .info {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+  }
+
+  .rule {
+    border: 0;
+    height: 2px;
+    background: #0f172a10;
+    margin: 32px 0;
+  }
+
+  .spots h2 {
+    font-size: clamp(26px, 5vw, 44px);
+    line-height: 1.05;
+    margin: 0 0 16px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  /* Vandret scroller med “cards” */
+  .cards {
+    padding-bottom: 8px;
+  }
+
+  @media (min-width: 900px) {
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+  }
+</style>
