@@ -1,0 +1,92 @@
+<h1 class="carousel-h1">5 FAVORITE SPOTS IN COPENHAGEN</h1>
+<div class="carousel" style="--cards: 4; --gap: 16px;">
+  <div class="viewport">
+    <div class="rail">
+      <div class="slide"><img src="/imgs/Slider_Harbo.png" alt="" /></div>
+      <div class="slide"><img src="/imgs/Slider_Glypto.png" alt="" /></div>
+      <div class="slide"><img src="/imgs/Slider_jetaime.png" alt="" /></div>
+      <div class="slide"><img src="/imgs/Slider_biblio.png" alt="" /></div>
+      <div class="slide"><img src="/imgs/Slider_bettynansen.png" alt="" /></div>
+    </div>
+  </div>
+  <button class="next" type="button" aria-label="Next"></button>
+</div>
+
+<style>
+  .carousel-h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    padding-top: 50px;
+  }
+
+  .carousel {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .viewport {
+    overflow: hidden;
+  }
+
+  .rail {
+    display: flex;
+    gap: var(--gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slide {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+  .slide img {
+    width: 100%;
+    max-width: 325px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -60px; /* push OUTSIDE the cards */
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: url("/imgs/Carousel_arrow.png") no-repeat center center /
+      contain;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  @media (max-width: 640px) {
+    .carousel {
+      --cards: 1;
+    }
+  }
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .carousel {
+      --cards: 2;
+    }
+  }
+  @media (min-width: 1025px) {
+    .carousel {
+      --cards: 4;
+    }
+  }
+</style>
+
+<script src="/js/carousel.js" defer></script>
