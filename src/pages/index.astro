@@ -25,6 +25,9 @@ import Carousel from "../components/Carousel.astro";
           <Phone screen="../imgs/Phone_berlinTrip.png" />
           <Phone screen="../imgs/Phone_harbo.png" />
         </div>
+        <a href="https://www.instagram.com/" target="_blank" class="outline-btn"
+          >CRTV ESC ON INSTAGRAM</a
+        >
       </section>
 
       <Section_Green
@@ -83,7 +86,33 @@ import Carousel from "../components/Carousel.astro";
       </section>
       <Separator />
       <Carousel />
+      <br /><br /><br /><br />
       <Separator />
+
+      <section class="hero-gradient-red">
+        <div class="iphone-grid">
+          <Phone screen="../imgs/Phone_holzmarkt.png" />
+          <Phone screen="../imgs/Phone_david.png" />
+          <Phone screen="../imgs/Phone_berlinTiktok.png" />
+        </div>
+        <a href="https://www.tiktok.com/" target="_blank" class="outline-btn"
+          >CRTV ESC ON TIKTOK</a
+        >
+      </section>
+
+      <Section_Green
+        mainTitle="FREE HIDDEN GEMS"
+        subTitle="FEATURED ARTICLES"
+        title1="FREE GEM"
+        title2="FREE GEM"
+        title3="FREE GEM"
+        description1="Go typography scouting in Berlin"
+        description2="Holzmarket: streetfood..."
+        description3="Street art walk in Copenhagen"
+        imgsrc1="../imgs/freegem_smiley.png"
+        imgsrc2="../imgs/freegem_boats.png"
+        imgsrc3="../imgs/freegem_graffiti.png"
+      />
     </main>
     <Footer />
   </body>
@@ -92,6 +121,21 @@ import Carousel from "../components/Carousel.astro";
 <style>
   :root {
     --max: 1200px;
+  }
+
+  .outline-btn {
+    align-self: flex-end;
+    position: absolute;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-blue);
+    border-radius: 999px;
+    color: var(--color-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: var(--color-bg);
+    margin-bottom: 80px;
   }
 
   .hero-gradient-blue {
@@ -108,6 +152,13 @@ import Carousel from "../components/Carousel.astro";
     max-width: 1000px;
     width: 100%;
     justify-items: center;
+  }
+  .hero-gradient-red {
+    height: 800px;
+    background: linear-gradient(to bottom, var(--color-bg), #ffcdcd);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .news-feature {
@@ -192,6 +243,10 @@ import Carousel from "../components/Carousel.astro";
     .news-event img {
       width: 120px;
       height: 156px;
+    }
+
+    .iphone-grid {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 </style>
