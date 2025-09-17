@@ -1,0 +1,163 @@
+---
+/* Editable defaults (override via props when using the component) */
+const {
+  kicker = "CRTV ESC RECOMMEND",
+  title = "HARBO BAR",
+
+  img1 = "/imgs/harbo1.png",
+  img2 = "/imgs/harbo2.png",
+  img3 = "/imgs/harbo3.png",
+
+  paragraphs = [
+    "Lorem ipsum dolor sit amet. Rem debitis illo et commodi galisum aut quia reiciendis vel voluptatem maxime et aperiam culpa qui impedit distinctio? Eum sint quia sed nulla laborum qui aperiam consequatur a quia accusantium in quas expedita id voluptas atque! Sed quos reprehenderit et velit ducimus et aliquid iusto. Eos esse veritatis sit nobis maxime et expedita atque ut vitae dignissimos. Ad quidem unde qui dolorum tempore quo vitae sunt quo impedit rerum.",
+    "Eos ducimus maiores et eligendi architecto quo enim alias! Id incidunt delectus At veniam voluptate aut iure nulla. Qui alias labore est esse nihil sit nobis sunt eum saepe odit. Est aliquam asperiores aut dolores sapiente et dolorum impedit et omnis recusandae et omnis explicabo et minus quia in tempora impedit.",
+  ],
+
+  venueName = "HARBO BAR",
+  addressLine1 = "Blågårdsgade 2D",
+  addressLine2 = "2200 Copenhagen N",
+
+  instagramHandle = "@harbo_bar",
+  instagramUrl = "https://instagram.com/",
+  facebookLabel = "facebook.com/Harbobar",
+  facebookUrl = "https://facebook.com/",
+} = Astro.props;
+---
+
+<section class="place">
+  <p class="kicker">{kicker}</p>
+  <h1 class="title">{title}</h1>
+
+  <div class="strip">
+    <img src={img1} alt={`${title} photo 1`} />
+    <img src={img2} alt={`${title} photo 2`} />
+    <img src={img3} alt={`${title} photo 3`} />
+  </div>
+
+  <div class="copy">
+    {paragraphs.map((p) => <p>{p}</p>)}
+  </div>
+
+  <footer class="meta">
+    <div class="left">
+      <strong class="venue">{venueName}</strong>
+      <div class="addr">
+        <div>{addressLine1}</div>
+        <div>{addressLine2}</div>
+      </div>
+    </div>
+
+    <div class="right">
+      <a class="social" href={instagramUrl} target="_blank">
+        {instagramHandle}
+      </a>
+      <a class="social" href={facebookUrl} target="_blank">
+        {facebookLabel}
+      </a>
+    </div>
+  </footer>
+</section>
+
+<style>
+  .place {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 2rem;
+    color: var(--color-text);
+  }
+
+  .kicker {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+
+  .title {
+    margin: 0 0 1.25rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-blue);
+    font-size: clamp(1.8rem, 4vw + 0.5rem, 3rem);
+  }
+
+  .strip {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 1.25rem;
+    margin: 0 0 1.75rem;
+  }
+  .strip img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* body */
+  .copy p {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+    font-size: 0.98rem;
+  }
+
+  /* footer */
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+
+  .venue {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 0.35rem;
+    color: var(--color-blue);
+  }
+  .addr {
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+
+  .right {
+    display: grid;
+    gap: 0.4rem;
+    text-align: right;
+  }
+  .social {
+    color: var(--color-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .social:hover {
+    text-decoration: underline;
+  }
+  .dot {
+    color: var(--color-blue);
+    margin-right: 0.5ch;
+  }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    .strip {
+      grid-template-columns: 1fr;
+    }
+    .strip img {
+      height: 260px;
+    }
+    .meta {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .right {
+      text-align: left;
+    }
+  }
+</style>
